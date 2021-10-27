@@ -112,8 +112,8 @@ function viewEmployee() {
     let table = document.createElement("table");
 
     let col = [];
-    for (i = 0; i < employeeInfo.length; i++) {
-        for (key in employeeInfo[i]) {
+    for (i = 0; i < myData.length; i++) {
+        for (key in myData[i]) {
             if (col.indexOf(key) == -1) {
                 col.push(key)
             }
@@ -126,12 +126,12 @@ function viewEmployee() {
         tableRow.appendChild(tableHeader);
     }
 
-    for (let i = 0; i < employeeInfo.length; i++) {
+    for (let i = 0; i < myData.length; i++) {
         tableRow = table.insertRow(-1);
 
         for (let j = 0; j < col.length; j++) {
             let tabCell = tableRow.insertCell(-1);
-            tabCell.innerHTML = employeeInfo[i][col[j]];
+            tabCell.innerHTML = myData[i][col[j]];
         }
     }
 
