@@ -1,4 +1,5 @@
-"sampleData" = [{
+console.log("sampleData.js")
+"sampleData" == [{
     "ninumber": "ZS502747A",
     "fullname": "Chris P Bacon",
     "phone": "07659-831024",
