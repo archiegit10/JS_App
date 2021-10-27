@@ -1,5 +1,15 @@
 console.log("logic.js")
+var myData = employeeInfo
+console.log(myData)
 
+document.getElementById("json").innerHTML = JSON.stringify(myData)
+
+const formAdd = document.getElementById("form-addId");
+formAdd.addEventListener("submit", addEmployee);
+
+function refreshEmployee() {
+
+}
 
 function addEmployee() {
     let niValue = document.getElementById("ni").value;
@@ -15,5 +25,10 @@ function addEmployee() {
         "address": addressValue,
         "department": departmentValue
     }
-    console.log(newEmployee)
+    myData.push(newEmployee)
+    console.log(myData.length)
+}
+
+for (i in myData) {
+    console.log(myData[i])
 }

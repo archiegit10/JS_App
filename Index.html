@@ -9,11 +9,23 @@
 </head>
 
 <body>
-    <p>Body text Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero est deleniti soluta magnam praesentium modi ex cum perspiciatis neque maxime eligendi maiores porro labore laboriosam nobis cupiditate beatae, optio aut.</p>
-    <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam laudantium deleniti nulla mollitia eum natus odit fugit, illo consectetur minima, eius ipsa nostrum quas debitis nisi tenetur earum atque aliquid. Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Tempora voluptatibus quis mollitia placeat ipsa eveniet quos id. Consequatur, ducimus dolor. Consequatur mollitia eius reprehenderit beatae obcaecati iste molestiae vero delectus.</p>
+    <form id="form-addId">
+        <label for="ni">National Insurance Number:</label>
+        <input type="text" id="ni" name="ni"><br>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone"><br>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address"><br>
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department"><br>
+        <button type="submit" value="submitEmployee" id="submitEmployee">Submit</button>
+    </form>
+    <div id="json">Text</div>
 </body>
-<script src="Logic.js"></script>
 <script src="sampleData.js"></script>
+<script src="Logic.js"></script>
+
 
 </html>
