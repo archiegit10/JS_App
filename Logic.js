@@ -99,21 +99,49 @@ const formAdd = document.getElementById("form-addId");
 const formCloseView = document.getElementById("form-closeView");
 const formView = document.getElementById("form-view");
 
+let viewBtn = document.querySelector("#view-Btn");
+
 formView.addEventListener('submit', viewEmployee);
 formCloseView.addEventListener('submit', closeView);
 formAdd.addEventListener('submit', addEmployee);
 //formView.addEventListener("submit2", viewEmployee);
 
 function viewEmployee() {
-    document.getElementById("employeeData").innerHTML = JSON.stringify(myData)
     console.log("view employees")
+
+    let table = document.createElement("table");
+
+    let col = [];
+    for (i = 0; i < employeeInfo.length; i++) {
+        for (key in employeeInfo[i]) {
+            if (col.indexOf(key) == -1) {
+                col.push(key)
+            }
+        }
+    }
+    let tableRow = table.insertRow(-1);
+    for (let i = 0; i < col.length; i++) {
+        let tableHeader = document.createElement("th")
+        tableHeader.innerHTML = col[i];
+        tableRow.appendChild(tableHeader);
+    }
+
+    for (let i = 0; i < employeeInfo.length; i++) {
+        tableRow = table.insertRow(-1);
+
+        for (let j = 0; j < col.length; j++) {
+            let tabCell = tableRow.insertCell(-1);
+            tabCell.innerHTML = employeeInfo[i][col[j]];
+        }
+    }
+
+    let divContainer = document.getElementById("employeeData");
+    divContainer.innerHTML = "";
+    divContainer.appendChild(table);
 }
 
 function refreshEmployee() {
-    var container = document.getElementById("employeeData");
-    var content = container.innerHTML;
-    container.innerHTML = content;
-    document.getElementById("employeeData").innerHTML = JSON.stringify(myData)
+    viewEmployee()
     console.log("refreshed")
 }
 
