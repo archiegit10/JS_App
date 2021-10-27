@@ -29,13 +29,14 @@
         <button type="submit" value="submitEmployee" id="submitEmployee">Submit</button>
     </form>
 
-    <h2>Select Employee</h2>
-    <select id="selectEmployee">
+    <form id="form-select" onsubmit="return false">
+        <h2>Select Employee</h2>
+        <select id="selectEmployee">
         <option>Choose an Employee</option>
 </select>
+    </form>
 
-
-    <form id="form-view" onsubmit="return false">
+    <form id="form-view" onsubmit="return false"><br>
         <button type="submit" value="submitView" id="view-btn"> Open Employee View</button>
     </form>
     <form id="form-closeView" onsubmit="return false">

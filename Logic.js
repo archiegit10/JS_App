@@ -142,8 +142,9 @@ function viewEmployee() {
 }
 
 function refreshEmployee() {
-    viewEmployee()
-    console.log("refreshed")
+    viewEmployee();
+    selectEmployee();
+    console.log("refreshed");
 }
 
 function closeView() {
@@ -153,7 +154,6 @@ function closeView() {
 
 function selectEmployee() {
     select = document.getElementById("selectEmployee")
-    var options = [];
     for (let i = 0; i < myData.length; i++) {
         var opt = myData[i]["fullname"]
         var el = document.createElement("option");
@@ -193,7 +193,6 @@ function addEmployee() {
     myData.push(newEmployee)
     console.log(myData.length)
     refreshEmployee();
-
 }
 
 /*
