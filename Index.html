@@ -10,6 +10,7 @@
 
 <body>
     <form id="form-addId" onsubmit="return false">
+        <h2>Add Employee</h2>
         <label for="ni">National Insurance Number:</label>
         <input type="text" id="ni" name="ni"><br>
         <label for="name">Full Name:</label>
@@ -19,14 +20,22 @@
         <label for="address">Address:</label>
         <input type="text" id="address" name="address"><br>
         <label for="department">Department:</label>
-        <input type="text" id="department" name="department"><br>
+        <select id="department" name="department">
+            <option value="Sales">Sales</option>
+            <option value="IT">IT</option>
+            <option value="HR">HR</option>
+            <option value="Other">Other</option>
+            </select><br>
         <button type="submit" value="submitEmployee" id="submitEmployee">Submit</button>
     </form>
 
     <form id="form-view" onsubmit="return false">
-        <button type="submit" value="submitView" id="submitView"> Submit View</button>
+        <button type="submit" value="submitView" id="submitView"> Open Employee View</button>
     </form>
-    <div id="employeeData">Text</div>
+    <form id="form-closeView" onsubmit="return false">
+        <button type="submit" value="closeView" id="closeView"> Close Employee View</button>
+    </form>
+    <div id="employeeData"></div>
 </body>
 <script src="sampleData.js"></script>
 <script src="Logic.js"></script>

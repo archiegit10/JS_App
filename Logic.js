@@ -96,11 +96,11 @@ console.log(myData)
 //document.getElementById("employeeData").innerHTML = JSON.stringify(myData)
 
 const formAdd = document.getElementById("form-addId");
-
+const formCloseView = document.getElementById("form-closeView");
 const formView = document.getElementById("form-view");
 
 formView.addEventListener('submit', viewEmployee);
-
+formCloseView.addEventListener('submit', closeView);
 formAdd.addEventListener('submit', addEmployee);
 //formView.addEventListener("submit2", viewEmployee);
 
@@ -111,11 +111,15 @@ function viewEmployee() {
 
 function refreshEmployee() {
     var container = document.getElementById("employeeData");
-
     var content = container.innerHTML;
     container.innerHTML = content;
     document.getElementById("employeeData").innerHTML = JSON.stringify(myData)
     console.log("refreshed")
+}
+
+function closeView() {
+    document.getElementById("employeeData").innerHTML = ""
+    console.log("close view employees")
 }
 
 function addEmployee() {
