@@ -99,7 +99,7 @@ const formView = document.getElementById("form-view");
 
 let viewBtn = document.querySelector("#view-Btn");
 
-formView.addEventListener('submit', showEmployee);
+formView.addEventListener('submit', viewEmployee);
 formCloseView.addEventListener('submit', closeView);
 formAdd.addEventListener('submit', addEmployee);
 //formView.addEventListener("submit2", viewEmployee);
