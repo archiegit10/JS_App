@@ -104,6 +104,8 @@ formCloseView.addEventListener('submit', closeView);
 formAdd.addEventListener('submit', addEmployee);
 //formView.addEventListener("submit2", viewEmployee);
 
+selectEmployee()
+
 function viewEmployee() {
     console.log("view employees")
 
@@ -136,6 +138,7 @@ function viewEmployee() {
     let divContainer = document.getElementById("employeeData");
     divContainer.innerHTML = "";
     divContainer.appendChild(table);
+
 }
 
 function refreshEmployee() {
