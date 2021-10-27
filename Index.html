@@ -32,13 +32,12 @@
     <form id="form-select" onsubmit="return false">
         <h2>Select Employee</h2>
         <label for="selectEmployee">Select Employee: </label>
-        <select id="selectEmployee">
+        <select id="selectEmployee" onChange="showEmployee(this)">
         <option value="">Choose an Employee</option>
-</select>
-        <button type="submit" value="selectEmployee" id="selectEmployee"> Select Employee</button>
+        </select>
 
     </form>
-    <div id="employee">help</div>
+    <div id="employee">Employee Name</div>
 
 
     <h2>Employee View</h2>

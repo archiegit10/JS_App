@@ -96,9 +96,9 @@ var myData = [{
 const formAdd = document.getElementById("form-addId");
 const formCloseView = document.getElementById("form-closeView");
 const formView = document.getElementById("form-view");
-const formSelect = document.getElementById("form-select");
+
 let viewBtn = document.querySelector("#view-Btn");
-formSelect.addEventListener('submit', selectEmployee);
+
 formView.addEventListener('submit', showEmployee);
 formCloseView.addEventListener('submit', closeView);
 formAdd.addEventListener('submit', addEmployee);
@@ -152,14 +152,9 @@ function closeView() {
     console.log("close view employees")
 }
 
-function showEmployee() {
-    //var selectedEmployee = document.getElementById("employee").value
-    //document.getElementById("employee").innerHTML = selectedEmployee
-    select = document.getElementById("selectEmployee")
-    input = document.getElementById("employee")
-    select.onChange() = function() {
-        input.value = select.value
-    }
+function showEmployee(element) {
+    var text = element.options[element.selectedIndex].text;
+    document.getElementById("employee").innerHTML = text;
 }
 
 function selectEmployee() {
@@ -171,10 +166,6 @@ function selectEmployee() {
         el.textContent = opt;
         el.value = opt;
         select.appendChild(el);
-        //console.log(myData[i])
-
-
-
     }
 }
 
