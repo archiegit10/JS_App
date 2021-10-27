@@ -96,7 +96,18 @@ console.log(myData)
 //document.getElementById("employeeData").innerHTML = JSON.stringify(myData)
 
 const formAdd = document.getElementById("form-addId");
-formAdd.addEventListener("submit", addEmployee);
+
+const formView = document.getElementById("form-view");
+
+formView.addEventListener('submit', viewEmployee);
+
+formAdd.addEventListener('submit', addEmployee);
+//formView.addEventListener("submit2", viewEmployee);
+
+function viewEmployee() {
+    document.getElementById("employeeData").innerHTML = JSON.stringify(myData)
+    console.log("view employees")
+}
 
 function refreshEmployee() {
     var container = document.getElementById("employeeData");
