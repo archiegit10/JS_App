@@ -31,12 +31,19 @@
 
     <form id="form-select" onsubmit="return false">
         <h2>Select Employee</h2>
+        <label for="selectEmployee">Select Employee: </label>
         <select id="selectEmployee">
-        <option>Choose an Employee</option>
+        <option value="">Choose an Employee</option>
 </select>
-    </form>
+        <button type="submit" value="selectEmployee" id="selectEmployee"> Select Employee</button>
 
-    <form id="form-view" onsubmit="return false"><br>
+    </form>
+    <div id="employee">help</div>
+
+
+    <h2>Employee View</h2>
+    <form id="form-view" onsubmit="return false">
+
         <button type="submit" value="submitView" id="view-btn"> Open Employee View</button>
     </form>
     <form id="form-closeView" onsubmit="return false">

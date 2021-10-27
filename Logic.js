@@ -96,10 +96,10 @@ var myData = [{
 const formAdd = document.getElementById("form-addId");
 const formCloseView = document.getElementById("form-closeView");
 const formView = document.getElementById("form-view");
-
+const formSelect = document.getElementById("form-select");
 let viewBtn = document.querySelector("#view-Btn");
-
-formView.addEventListener('submit', viewEmployee);
+formSelect.addEventListener('submit', selectEmployee);
+formView.addEventListener('submit', showEmployee);
 formCloseView.addEventListener('submit', closeView);
 formAdd.addEventListener('submit', addEmployee);
 //formView.addEventListener("submit2", viewEmployee);
@@ -152,7 +152,18 @@ function closeView() {
     console.log("close view employees")
 }
 
+function showEmployee() {
+    //var selectedEmployee = document.getElementById("employee").value
+    //document.getElementById("employee").innerHTML = selectedEmployee
+    select = document.getElementById("selectEmployee")
+    input = document.getElementById("employee")
+    select.onChange() = function() {
+        input.value = select.value
+    }
+}
+
 function selectEmployee() {
+    console.log("im losing it)")
     select = document.getElementById("selectEmployee")
     for (let i = 0; i < myData.length; i++) {
         var opt = myData[i]["fullname"]
@@ -161,6 +172,7 @@ function selectEmployee() {
         el.value = opt;
         select.appendChild(el);
         //console.log(myData[i])
+
 
 
     }
