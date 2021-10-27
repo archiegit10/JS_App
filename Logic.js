@@ -151,11 +151,21 @@ function closeView() {
 }
 
 function addEmployee() {
+
+
     let niValue = document.getElementById("ni").value;
     let nameValue = document.getElementById("name").value;
     let phoneValue = document.getElementById("phone").value;
     let addressValue = document.getElementById("address").value;
     let departmentValue = document.getElementById("department").value;
+    // ni will be the key
+    for (i = 0; i < myData.length; i++) {
+        if (niValue == myData[i].ninumber) {
+            alert("Please enter a unique national insurance ID")
+            return;
+        }
+    }
+
 
     const newEmployee = {
         "ninumber": niValue,
@@ -167,7 +177,9 @@ function addEmployee() {
     myData.push(newEmployee)
     console.log(myData.length)
     refreshEmployee();
+
 }
+
 /*
 for (i in myData) {
     console.log(myData[i])
