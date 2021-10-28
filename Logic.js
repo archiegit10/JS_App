@@ -143,17 +143,17 @@ function viewEmployee() {
     divContainer.appendChild(table);
 
 }
+selectEmployee()
 
-function refreshEmployee() {
-    viewEmployee();
-    selectEmployee();
-    console.log("refreshed");
-}
+
 
 function closeView() {
     document.getElementById("employeeData").innerHTML = ""
 }
-
+/*
+Name; showEmployee Parameter: the selected employee
+Purpose; passes the data of the selected employee into the text boxes for editing
+*/
 function showEmployee(element) {
     var text = element.options[element.selectedIndex].text;
     document.getElementById("employee").innerHTML = text;
@@ -205,8 +205,10 @@ function editEmployee() {
 
 
 function selectEmployee() {
+    clearDropBox()
     select = document.getElementById("selectEmployee")
     for (let i = 0; i < myData.length; i++) {
+
         var opt2 = myData[i]["ninumber"]
         var opt1 = myData[i]["fullname"]
         var opt = opt1 + "    " + opt2
@@ -217,6 +219,14 @@ function selectEmployee() {
     }
 }
 
+function clearDropBox() {
+    console.log("clear drop box start")
+    const myNode = document.getElementById("selectEmployee")
+    while (myNode.firstChild) {
+        myNode.removeChild(myNode.lastChild)
+    }
+    console.log("clear drop box done")
+}
 
 function addEmployee() {
     let niValue = document.getElementById("ni").value;
@@ -241,7 +251,8 @@ function addEmployee() {
     }
     myData.push(newEmployee)
     console.log(myData.length)
-    refreshEmployee();
+    viewEmployee();
+    selectEmployee();
 }
 
 
