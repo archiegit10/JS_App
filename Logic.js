@@ -186,7 +186,12 @@ function editEmployee() {
             let phoneValue = document.getElementById("phoneEdit").value;
             let addressValue = document.getElementById("addressEdit").value;
             let departmentValue = document.getElementById("departmentEdit").value;
-
+            for (i = 0; i < myData.length; i++) {
+                if (niValue == myData[i].ninumber) {
+                    alert("Please enter a unique national insurance ID")
+                    return;
+                }
+            }
             myData[i] = {
                 "ninumber": niValue,
                 "fullname": nameValue,
