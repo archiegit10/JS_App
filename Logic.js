@@ -109,8 +109,6 @@ formAdd.addEventListener('submit', addEmployee);
 selectEmployee()
 
 function viewEmployee() {
-    console.log("view employees")
-
     let table = document.createElement("table");
 
     let col = [];
@@ -151,7 +149,6 @@ function refreshEmployee() {
 
 function closeView() {
     document.getElementById("employeeData").innerHTML = ""
-    console.log("close view employees")
 }
 
 function showEmployee(element) {
@@ -225,7 +222,6 @@ function deleteEmployee() {
             return myData;
         }
     }
-
 }
 /*
 for (i in myData) {
