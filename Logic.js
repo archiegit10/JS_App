@@ -104,7 +104,7 @@ const formAdd = document.getElementById("form-addId");
 formAdd.addEventListener('submit', addEmployee);
 
 
-//selectEmployee()
+selectEmployee()
 
 function splitWord(word) {
     var n = word.split(" ");
@@ -143,7 +143,7 @@ function viewEmployee() {
     divContainer.appendChild(table);
 
 }
-selectEmployee()
+
 
 
 
@@ -199,13 +199,14 @@ function editEmployee() {
             }
         }
     }
-
+    selectEmployee()
+    viewEmployee()
 }
 
 
 
 function selectEmployee() {
-    clearDropBox()
+    clearDropdown()
     select = document.getElementById("selectEmployee")
     for (let i = 0; i < myData.length; i++) {
 
@@ -219,13 +220,11 @@ function selectEmployee() {
     }
 }
 
-function clearDropBox() {
-    console.log("clear drop box start")
+function clearDropdown() {
     const myNode = document.getElementById("selectEmployee")
     while (myNode.firstChild) {
         myNode.removeChild(myNode.lastChild)
     }
-    console.log("clear drop box done")
 }
 
 function addEmployee() {
@@ -251,8 +250,8 @@ function addEmployee() {
     }
     myData.push(newEmployee)
     console.log(myData.length)
-    viewEmployee();
     selectEmployee();
+    viewEmployee()
 }
 
 
@@ -270,6 +269,5 @@ function deleteEmployee() {
             return myData;
         }
     }
-
-
+    selectEmployee()
 }
