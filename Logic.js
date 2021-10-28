@@ -7,10 +7,14 @@ viewBtn.addEventListener("click", viewEmployee);
 let clearBtn = document.getElementById("clearViewBtn");
 clearBtn.addEventListener("click", closeView);
 
+const formFilterView = document.getElementById('form-filter');
+let formFilter = document.getElementById("viewFilterBtn");
+formFilter.addEventListener('click', filterDepartment);
 
 
 const formAdd = document.getElementById("form-addId");
 formAdd.addEventListener('submit', addEmployee);
+
 
 
 selectEmployee()
@@ -22,7 +26,6 @@ function splitWord(word) {
 
 function viewEmployee() {
     let table = document.createElement("table");
-
     let col = [];
     for (i = 0; i < myData.length; i++) {
         for (key in myData[i]) {
@@ -37,28 +40,22 @@ function viewEmployee() {
         tableHeader.innerHTML = col[i];
         tableRow.appendChild(tableHeader);
     }
-
     for (let i = 0; i < myData.length; i++) {
         tableRow = table.insertRow(-1);
-
         for (let j = 0; j < col.length; j++) {
             let tabCell = tableRow.insertCell(-1);
             tabCell.innerHTML = myData[i][col[j]];
         }
     }
-
     let divContainer = document.getElementById("employeeData");
     divContainer.innerHTML = "";
     divContainer.appendChild(table);
-
 }
-
-
-
 
 function closeView() {
     document.getElementById("employeeData").innerHTML = ""
 }
+
 /*
 Name; showEmployee Parameter: the selected employee
 Purpose; passes the data of the selected employee into the text boxes for editing
@@ -166,6 +163,7 @@ function addEmployee() {
 
 
 
+
 function deleteEmployee() {
     console.log("delete employee")
     var selection = document.getElementById('employee2');
@@ -179,4 +177,46 @@ function deleteEmployee() {
         }
     }
     selectEmployee()
+}
+
+function filterDepartment() {
+    let department = document.getElementById("departmentSel").value;
+    const departmentArray = []
+    for (i = 0; i < myData.length; i++) {
+        if (department == myData[i].department) {
+            departmentArray.push(myData[i])
+
+        }
+    }
+    let table = document.createElement("table");
+    let col = [];
+    for (let i = 0; i < departmentArray.length; i++) {
+        for (let key in departmentArray[i]) {
+            if (col.indexOf(key) === -1) {
+                col.push(key);
+            }
+        }
+    }
+    let tableRow = table.insertRow(-1);
+    for (let i = 0; i < col.length; i++) {
+        let tableHeader = document.createElement("th")
+        tableHeader.innerHTML = col[i];
+        tableRow.appendChild(tableHeader);
+    }
+    for (let i = 0; i < departmentArray.length; i++) {
+        tableRow = table.insertRow(-1);
+
+        for (let j = 0; j < col.length; j++) {
+            let tabCell = tableRow.insertCell(-1);
+            tabCell.innerHTML = departmentArray[i][col[j]];
+        }
+    }
+    let divContainer = document.getElementById("departmentView");
+    divContainer.innerHTML = "";
+    divContainer.appendChild(table);
+}
+
+function closeFilterView() {
+    console.log("close filter")
+    document.getElementById("departmentView").innerHTML = ""
 }

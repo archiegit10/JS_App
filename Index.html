@@ -63,18 +63,26 @@
         <div id="message"></div>
     </form>
 
-
-
-
+    <h2>Filter Employee View</h2>
+    <form id="form-filter" onsubmit="return false">
+        <label for="departmentSel">View Employees Who Work In:</label>
+        <select id="departmentSel" name="departmentSel">
+            <option value="Sales">Sales</option>
+            <option value="IT">IT</option>
+            <option value="HR">HR</option>
+            <option value="Other">Other</option>
+            </select><br>
+        <button id="viewFilterBtn" type="submit">View Filter View</button>
+        <button id="closeFilterBtn" type="button" onClick="closeFilterView()">Clear Filter View</button>
+    </form>
+    <div id="departmentView"></div>
     <h2>Employee View</h2>
     <form id="form-view" onsubmit="return false">
-
-        <button id="viewBtn" type="button"> View Employee Information </button>
-        <button id="clearViewBtn" type="button"> Clear Employee Information </button>
-
+        <button id="viewBtn" type="button">View All Employee Information</button>
+        <button id="clearViewBtn" type="button">Clear Employee Information</button>
     </form>
-
     <div id="employeeData"></div>
+
 </body>
 <script src="sampleData.js"></script>
 <script src="Logic.js"></script>
