@@ -99,10 +99,11 @@ const formView = document.getElementById("form-view");
 //const formEdit = document.getElementById("form-editId");
 
 let viewBtn = document.querySelector("#view-Btn");
-
+//let refreshDropbtn = document.getElementById("refreshDrop")
 formView.addEventListener('submit', viewEmployee);
 formCloseView.addEventListener('submit', closeView);
 formAdd.addEventListener('submit', addEmployee);
+//refreshDropbtn.addEventListener('submit', selectEmployee);
 //formEdit.addEventListener('submit', editEmployee);
 //formView.addEventListener("submit2", viewEmployee);
 
@@ -202,12 +203,28 @@ function addEmployee() {
 
 function editEmployee() {
     console.log("edit employee")
+    var selection = document.getElementById('employee2');
+    var textSelection = selection.innerText
+    var niSelection = splitWord(textSelection)
+    console.log(niSelection);
+
+    for (i = 0; i < myData.length; i++) {
+        if (niSelection == myData[i]["ninumber"]) {
+            document.getElementById("niEdit").value = myData[i]["ninumber"];
+            document.getElementById("nameEdit").value = myData[i]["fullname"];
+            document.getElementById("phoneEdit").value = myData[i]["phone"];
+            document.getElementById("addressEdit").value = myData[i]["address"];
+            document.getElementById("departmentEdit").value = myData[i]["department"];
+        }
+
+    }
 }
 
 function splitWord(word) {
     var n = word.split(" ");
     return n[n.length - 1]
 }
+
 
 
 function deleteEmployee() {
