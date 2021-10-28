@@ -96,12 +96,14 @@ var myData = [{
 const formAdd = document.getElementById("form-addId");
 const formCloseView = document.getElementById("form-closeView");
 const formView = document.getElementById("form-view");
+//const formEdit = document.getElementById("form-editId");
 
 let viewBtn = document.querySelector("#view-Btn");
 
 formView.addEventListener('submit', viewEmployee);
 formCloseView.addEventListener('submit', closeView);
 formAdd.addEventListener('submit', addEmployee);
+//formEdit.addEventListener('submit', editEmployee);
 //formView.addEventListener("submit2", viewEmployee);
 
 selectEmployee()
@@ -172,6 +174,7 @@ function selectEmployee() {
     }
 }
 
+
 function addEmployee() {
 
 
@@ -201,6 +204,23 @@ function addEmployee() {
     refreshEmployee();
 }
 
+function editEmployee() {
+    console.log("edit employee")
+}
+
+function splitWord(word) {
+    var n = word.split(" ");
+    return n[n.length - 1]
+}
+
+function deleteEmployee() {
+    var selection = document.getElementById('employee2');
+    var textSelection = selection.innerText
+    console.log(textSelection)
+    var tempW = splitWord(textSelection)
+    console.log(tempW)
+    console.log("delete employee")
+}
 /*
 for (i in myData) {
     console.log(myData[i])
