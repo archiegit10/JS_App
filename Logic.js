@@ -213,13 +213,32 @@ function splitWord(word) {
     return n[n.length - 1]
 }
 
+function removeItem(arr, value) {
+    console.log("remove")
+    console.log(value)
+    var index = arr.indexOf(value);
+    if (index > -1) {
+        arr.splice(index, 1);
+    }
+    return arr;
+}
+
 function deleteEmployee() {
     var selection = document.getElementById('employee2');
     var textSelection = selection.innerText
-    console.log(textSelection)
-    var tempW = splitWord(textSelection)
-    console.log(tempW)
-    console.log("delete employee")
+    var niSelection = splitWord(textSelection)
+    console.log(niSelection)
+    console.log(myData.length)
+    console.log(removeItem(myData, niSelection))
+    console.log(myData.length)
+        /*for (i = 0; i < myData.length; i++) {
+            if (niSelection == myData[i].ninumber) {
+                console.log(myData[i].ninumber)
+                removeItem(myData,niSelection)
+
+            }
+        }
+        */
 }
 /*
 for (i in myData) {
