@@ -178,20 +178,20 @@ function editEmployee() {
     console.log("edit employee")
     let selectedEmployee = splitWord(document.getElementById("employee2").innerText)
     console.log(selectedEmployee)
+
     for (i = 0; i < myData.length; i++) {
         if (selectedEmployee == myData[i].ninumber) {
+            console.log("before edit")
             console.log(myData[i])
+
             let niValue = document.getElementById("niEdit").value;
             let nameValue = document.getElementById("nameEdit").value;
             let phoneValue = document.getElementById("phoneEdit").value;
             let addressValue = document.getElementById("addressEdit").value;
             let departmentValue = document.getElementById("departmentEdit").value;
-            for (i = 0; i < myData.length; i++) {
-                if (niValue == myData[i].ninumber) {
-                    alert("Please enter a unique national insurance ID")
-                    return;
-                }
-            }
+
+            document.getElementById('message').innerHTML = `Edited NI: ${niValue},Name: ${nameValue},Name: ${phoneValue},Name: ${addressValue},Name: ${departmentValue}`
+
             myData[i] = {
                 "ninumber": niValue,
                 "fullname": nameValue,
@@ -199,7 +199,6 @@ function editEmployee() {
                 "address": addressValue,
                 "department": departmentValue
             }
-            console.log(myData[i])
         }
     }
 
@@ -255,10 +254,13 @@ function deleteEmployee() {
     var selection = document.getElementById('employee2');
     var textSelection = selection.innerText
     var niSelection = splitWord(textSelection)
+    document.getElementById('message').innerHTML = `Deleted ID: ${niSelection}`
     for (i = 0; i < myData.length; i++) {
         if (niSelection == myData[i].ninumber) {
             myData.splice(i, 1);
             return myData;
         }
     }
+
+
 }

@@ -41,7 +41,7 @@
 
     <form id="form-editId" onsubmit="return false">
         <h2>Edit Employee</h2>
-        <div id="employee2">Employee Name</div>
+        <div id="employee2"></div>
         <label for="niEdit">National Insurance Number:</label>
         <input type="text" id="niEdit" name="niEdit"><br>
         <label for="nameEdit">Full Name:</label>
@@ -58,7 +58,9 @@
             <option value="Other">Other</option>
             </select><br>
         <button type="submit" value="submitEdit" id="submitEdit" onClick="editEmployee()">Save Employee</button>
-        <button type="submit" value="submitDel" id="submitDel" onClick="deleteEmployee()">Delete Employee</button>
+        <button type="submit" value="submitDel" id="submitDel" onClick="deleteEmployee()">Delete Employee</button><br>
+
+        <div id="message"></div>
     </form>
 
 
