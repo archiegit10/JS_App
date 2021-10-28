@@ -80,22 +80,16 @@ function showEmployee(element) {
 
 
 function editEmployee() {
-    console.log("edit employee")
     let selectedEmployee = splitWord(document.getElementById("employee2").innerText)
-
     for (i = 0; i < myData.length; i++) {
         if (selectedEmployee == myData[i].ninumber) {
-            console.log("before edit")
             console.log(myData[i])
-
             let niValue = document.getElementById("niEdit").value;
             let nameValue = document.getElementById("nameEdit").value;
             let phoneValue = document.getElementById("phoneEdit").value;
             let addressValue = document.getElementById("addressEdit").value;
             let departmentValue = document.getElementById("departmentEdit").value;
-
             document.getElementById('message').innerHTML = `Edited NI: ${niValue},Name: ${nameValue},Name: ${phoneValue},Name: ${addressValue},Name: ${departmentValue}`
-
             myData[i] = {
                 "ninumber": niValue,
                 "fullname": nameValue,
@@ -108,8 +102,6 @@ function editEmployee() {
     selectEmployee()
     viewEmployee()
 }
-
-
 
 function selectEmployee() {
     clearDropdown()
@@ -159,9 +151,6 @@ function addEmployee() {
     selectEmployee();
     viewEmployee()
 }
-
-
-
 
 
 function deleteEmployee() {

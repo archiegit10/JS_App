@@ -1,0 +1,36 @@
+/* Global values */
+
+html {
+    font-size: 1rem;
+}
+
+@include media-breakpoint-up(sm) {
+    html {
+        font-size: 1.2rem;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    html {
+        font-size: 1.4rem;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    html {
+        font-size: 1.6rem;
+    }
+}
+
+.top-buffer {
+    margin-top: 20px;
+}
+
+.side-buffer {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.title {
+    text-align: center;
+}
