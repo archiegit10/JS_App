@@ -39,6 +39,29 @@
     </form>
     <div id="employee">Employee Name</div>
 
+    <form id="form-editId" onsubmit="return false">
+        <h2>Edit Employee</h2>
+        <div id="employee2">Employee Name</div>
+        <label for="niEdit">National Insurance Number:</label>
+        <input type="text" id="niEdit" name="niEdit"><br>
+        <label for="nameEdit">Full Name:</label>
+        <input type="text" id="nameEdit" name="nameEdit"><br>
+        <label for="phoneEdit">Phone Number:</label>
+        <input type="text" id="phoneEdit" name="phoneEdit"><br>
+        <label for="addressEdit">Address:</label>
+        <input type="text" id="addressEdit" name="addressEdit"><br>
+        <label for="departmentEdit">Department:</label>
+        <select id="departmentEdit" name="departmentEdit">
+            <option value="Sales">Sales</option>
+            <option value="IT">IT</option>
+            <option value="HR">HR</option>
+            <option value="Other">Other</option>
+            </select><br>
+        <button type="submit" value="submitEdit" id="submitEdit">Save</button>
+    </form>
+
+
+
 
     <h2>Employee View</h2>
     <form id="form-view" onsubmit="return false">

@@ -155,6 +155,7 @@ function closeView() {
 function showEmployee(element) {
     var text = element.options[element.selectedIndex].text;
     document.getElementById("employee").innerHTML = text;
+    document.getElementById("employee2").innerHTML = text;
 }
 
 function selectEmployee() {
