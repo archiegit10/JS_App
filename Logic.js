@@ -92,20 +92,19 @@ var myData = [{
     "department": "Sales"
 }]
 
+const formView = document.getElementById('form-view');
+let viewBtn = document.getElementById("viewBtn");
+viewBtn.addEventListener("click", viewEmployee);
+let clearBtn = document.getElementById("clearViewBtn");
+clearBtn.addEventListener("click", closeView);
+
+
 
 const formAdd = document.getElementById("form-addId");
-const formCloseView = document.getElementById("form-closeView");
-const formView = document.getElementById("form-view");
-
-
-let viewBtn = document.querySelector("#view-Btn");
-
-formView.addEventListener('submit', viewEmployee);
-formCloseView.addEventListener('submit', closeView);
 formAdd.addEventListener('submit', addEmployee);
 
 
-selectEmployee()
+//selectEmployee()
 
 function splitWord(word) {
     var n = word.split(" ");
@@ -177,7 +176,6 @@ function showEmployee(element) {
 function editEmployee() {
     console.log("edit employee")
     let selectedEmployee = splitWord(document.getElementById("employee2").innerText)
-    console.log(selectedEmployee)
 
     for (i = 0; i < myData.length; i++) {
         if (selectedEmployee == myData[i].ninumber) {
