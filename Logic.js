@@ -178,23 +178,29 @@ function editEmployee() {
     console.log("edit employee")
     let selectedEmployee = splitWord(document.getElementById("employee2").innerText)
     console.log(selectedEmployee)
-        /*
-        var selection = document.getElementById('employee2');
-        var textSelection = selection.innerText
-        var niSelection = splitWord(textSelection)
+    for (i = 0; i < myData.length; i++) {
+        if (selectedEmployee == myData[i].ninumber) {
+            console.log(myData[i])
+            let niValue = document.getElementById("niEdit").value;
+            let nameValue = document.getElementById("nameEdit").value;
+            let phoneValue = document.getElementById("phoneEdit").value;
+            let addressValue = document.getElementById("addressEdit").value;
+            let departmentValue = document.getElementById("departmentEdit").value;
 
-        console.log(niSelection)
-        for (i = 0; i < myData.length; i++) {
-            if (niSelection == myData[i]["ninumber"]) {
-                document.getElementById("niEdit").value = myData[i]["ninumber"];
-                document.getElementById("nameEdit").value = myData[i]["fullname"];
-                document.getElementById("phoneEdit").value = myData[i]["phone"];
-                document.getElementById("addressEdit").value = myData[i]["address"];
-                document.getElementById("departmentEdit").value = myData[i]["department"];
+            myData[i] = {
+                "ninumber": niValue,
+                "fullname": nameValue,
+                "phone": phoneValue,
+                "address": addressValue,
+                "department": departmentValue
             }
+            console.log(myData[i])
         }
-        */
+    }
+
 }
+
+
 
 function selectEmployee() {
     select = document.getElementById("selectEmployee")
