@@ -104,6 +104,7 @@ formView.addEventListener('submit', viewEmployee);
 formCloseView.addEventListener('submit', closeView);
 formAdd.addEventListener('submit', addEmployee);
 
+
 selectEmployee()
 
 function splitWord(word) {
@@ -158,12 +159,8 @@ function showEmployee(element) {
     var text = element.options[element.selectedIndex].text;
     document.getElementById("employee").innerHTML = text;
     document.getElementById("employee2").innerHTML = text;
-    console.log(text)
-    editEmployee(text)
-}
 
-function editEmployee(employeeVal) {
-    var niSelection = splitWord(employeeVal)
+    var niSelection = splitWord(text)
     for (i = 0; i < myData.length; i++) {
         if (niSelection == myData[i]["ninumber"]) {
             document.getElementById("niEdit").value = myData[i]["ninumber"];
@@ -175,8 +172,31 @@ function editEmployee(employeeVal) {
     }
 }
 
-function selectEmployee() {
 
+
+function editEmployee() {
+    console.log("edit employee")
+    let selectedEmployee = splitWord(document.getElementById("employee2").innerText)
+    console.log(selectedEmployee)
+        /*
+        var selection = document.getElementById('employee2');
+        var textSelection = selection.innerText
+        var niSelection = splitWord(textSelection)
+
+        console.log(niSelection)
+        for (i = 0; i < myData.length; i++) {
+            if (niSelection == myData[i]["ninumber"]) {
+                document.getElementById("niEdit").value = myData[i]["ninumber"];
+                document.getElementById("nameEdit").value = myData[i]["fullname"];
+                document.getElementById("phoneEdit").value = myData[i]["phone"];
+                document.getElementById("addressEdit").value = myData[i]["address"];
+                document.getElementById("departmentEdit").value = myData[i]["department"];
+            }
+        }
+        */
+}
+
+function selectEmployee() {
     select = document.getElementById("selectEmployee")
     for (let i = 0; i < myData.length; i++) {
         var opt2 = myData[i]["ninumber"]
@@ -204,7 +224,6 @@ function addEmployee() {
         }
     }
 
-
     const newEmployee = {
         "ninumber": niValue,
         "fullname": nameValue,
@@ -221,6 +240,7 @@ function addEmployee() {
 
 
 function deleteEmployee() {
+    console.log("delete employee")
     var selection = document.getElementById('employee2');
     var textSelection = selection.innerText
     var niSelection = splitWord(textSelection)
