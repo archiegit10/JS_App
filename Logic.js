@@ -161,7 +161,9 @@ function selectEmployee() {
     console.log("im losing it)")
     select = document.getElementById("selectEmployee")
     for (let i = 0; i < myData.length; i++) {
-        var opt = myData[i]["fullname"]
+        var opt2 = myData[i]["ninumber"]
+        var opt1 = myData[i]["fullname"]
+        var opt = opt1 + "    " + opt2
         var el = document.createElement("option");
         el.textContent = opt;
         el.value = opt;
